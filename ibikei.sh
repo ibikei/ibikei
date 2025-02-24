@@ -92,6 +92,10 @@ code() {
     printf "<code>%s</code>\n" "$@" >> "$IBK_OUT"
 }
 
+textbox.testing() {
+	printf "<input %s></input>"
+}
+
 t() {
 	printf "%s\n" "$@" >> "$IBK_OUT"
 }

@@ -12,7 +12,7 @@ content
 		paragraph "you make an .ibkx file and write IBK-Lang in it.
 IBK-Lang is the language used in place of Markdown for the input files.
 you then run the ibikei.sh script using the following syntax:"
-		paragraph "./ibikei.sh <input file> <output file>"
+		paragraph "./ibikei.sh < input file >  < output file >"
 		paragraph "in the case of the website that has been written here,"
 		code "./ibikei.sh index.ibkx index.html"
 		paragraph "it'll source the .ibkx file, and will go through every line progressively"
