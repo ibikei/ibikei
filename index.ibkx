@@ -1,21 +1,30 @@
 init
 meta
 	page.title "Ibikei $VERSION"
+	meta.link 'rel="stylesheet" href="https://kevadesu.github.io/echostyle/style.css"'
+	meta.link 'rel="preconnect" href="https://fonts.googleapis.com"'
+	meta.link 'rel="preconnect" href="https://fonts.gstatic.com" crossorigin'
+	meta.link 'href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet"'
+	meta.m 'name="viewport" content="width=device-width, initial-scale=1.0"'
 meta.end
 content
-	center
-		heading1 "ibikei SSG"
-		paragraph "an SSG made in bash."
-		heading1 "IBK-Lang"
-		paragraph "a markup language that has been made just for this project"
-		heading2 "how does any of this work??!!"
-		paragraph "you make an .ibkx file and write IBK-Lang in it.
+	con "class=desk"
+		con "class=window"
+			center
+				heading1 "ibikei SSG"
+				paragraph "an SSG made in bash."
+				heading1 "IBK-Lang"
+				paragraph "a markup language that has been made just for this project"
+				heading2 "how does any of this work??!!"
+				paragraph "you make an .ibkx file and write IBK-Lang in it.
 IBK-Lang is the language used in place of Markdown for the input files.
 you then run the ibikei.sh script using the following syntax:"
-		paragraph "./ibikei.sh < input file >  < output file >"
-		paragraph "in the case of the website that has been written here,"
-		code "./ibikei.sh index.ibkx index.html"
-		paragraph "it'll source the .ibkx file, and will go through every line progressively"
-		hlink "href='https://github.com/ibikei/ibikei'" "go check it out"
-	center.end
+				paragraph "./ibikei.sh < input file >  < output file >"
+				paragraph "in the case of the website that has been written here,"
+				code "./ibikei.sh index.ibkx index.html"
+				paragraph "it'll source the .ibkx file, and will go through every line progressively"
+				hlink "href='https://github.com/ibikei/ibikei'" "go check it out"
+			center.end
+		con.end
+	con.end
 content.end

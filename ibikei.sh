@@ -24,6 +24,14 @@ meta() {
     printf "<head>\n" >> "$IBK_OUT"
 }
 
+meta.link() {
+	printf "<link %s>" "$@" >> "$IBK_OUT"
+}
+
+meta.m() {
+	printf "<meta %s>" "$@" >> "$IBK_OUT"
+}
+
 page.title() {
     printf "<title>%s</title>" "$*" >> "$IBK_OUT"
 }
@@ -90,6 +98,10 @@ content.end() {
 
 code() {
     printf "<code>%s</code>\n" "$@" >> "$IBK_OUT"
+}
+
+textbox.testing() {
+	printf "<input %s></input>"
 }
 
 textbox.testing() {
