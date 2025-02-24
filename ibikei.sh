@@ -100,16 +100,14 @@ code() {
     printf "<code>%s</code>\n" "$@" >> "$IBK_OUT"
 }
 
-textbox.testing() {
-	printf "<input %s></input>"
-}
-
-textbox.testing() {
-	printf "<input %s></input>"
+textbox() {
+	printf "<input %s>" "$@"
 }
 
 t() {
 	printf "%s\n" "$@" >> "$IBK_OUT"
 }
+
+# Runs the main function
 
 main
