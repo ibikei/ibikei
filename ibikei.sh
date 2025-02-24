@@ -81,11 +81,19 @@ center.end() {
 }
 
 hlink() {
-	echo -e "<a ${1}>${2}</a>\n" >> "$IBK_OUT"
+	printf "<a %s>%s</a>\n" "$1" "$2" >> "$IBK_OUT"
 }
 
 content.end() {
     printf "</body>\n" >> "$IBK_OUT"
+}
+
+code() {
+    printf "<code>%s</code>\n" "$@" >> "$IBK_OUT"
+}
+
+t() {
+	printf "%s\n" "$@" >> "$IBK_OUT"
 }
 
 main
