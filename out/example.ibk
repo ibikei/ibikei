@@ -1,0 +1,4 @@
+$content
+    $heading Hello
+    $paragraph Haiii
+$content_end
