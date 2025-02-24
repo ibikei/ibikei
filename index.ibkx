@@ -1,15 +1,15 @@
 init
 meta
-	page.title "Ibikei $VERSION"
-	meta.link 'rel="stylesheet" href="https://kevadesu.github.io/echostyle/style.css"'
+	meta.title "Ibikei $VERSION"
+	meta.link 'rel="stylesheet" href="https://kevadesu.github.io/style.css"'
 	meta.link 'rel="preconnect" href="https://fonts.googleapis.com"'
 	meta.link 'rel="preconnect" href="https://fonts.gstatic.com" crossorigin'
 	meta.link 'href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet"'
 	meta.m 'name="viewport" content="width=device-width, initial-scale=1.0"'
 meta.end
 content
-	con "class=desk"
-		con "class=window"
+	container "class=desk"
+		container "class=window"
 			center
 				heading1 "ibikei SSG"
 				paragraph "an SSG made in bash."
@@ -23,8 +23,8 @@ you then run the ibikei.sh script using the following syntax:"
 				paragraph "in the case of the website that has been written here,"
 				code "./ibikei.sh index.ibkx index.html"
 				paragraph "it'll source the .ibkx file, and will go through every line progressively"
-				hlink "href='https://github.com/ibikei/ibikei'" "go check it out"
+				hyperlink "href='https://github.com/ibikei/ibikei'" "go check it out"
 			center.end
-		con.end
-	con.end
+		container.end
+	container.end
 content.end
