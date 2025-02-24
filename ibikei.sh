@@ -6,13 +6,9 @@
 #                                                  #
 ####################################################
 
-export content="<body>"
-export heading="<h1 />"
-export paragraph="<p />"
-export content_end="</body>"
-
 export IBK_IN=$1
 export IBK_OUT=$2
+export VERSION=0.1
 
 main() {
     source "$IBK_IN"
@@ -21,19 +17,19 @@ main() {
 # Defining keywords in ibk-lang
 
 init() {
-    echo -e "<!DOCTYPE html>" > "$IBK_OUT"    
+    echo -e "<!DOCTYPE html>" > "$IBK_OUT"
 }
 
-settings() {
+meta() {
     printf "<head>\n" >> "$IBK_OUT"
 }
 
-page_title() {
-    printf "<title>%s</title>" "$*" >> "$IBK_OUT"    
+page.title() {
+    printf "<title>%s</title>" "$*" >> "$IBK_OUT"
 }
 
-settings_end() {
-    printf "</head>\n" >> "$IBK_OUT"    
+meta.end() {
+    printf "</head>\n" >> "$IBK_OUT"
 }
 
 content() {
@@ -68,7 +64,27 @@ paragraph() {
     printf "<p>%s</p>\n" "$@" >> "$IBK_OUT"
 }
 
-content_end() {
+con() {
+    printf "<div %s>\n" "$@" >> "$IBK_OUT"
+}
+
+con.end() {
+	printf "</div>\n" >> "$IBK_OUT"
+}
+
+center() {
+	printf "<center>\n" >> "$IBK_OUT"
+}
+
+center.end() {
+	printf "</center>\n" >> "$IBK_OUT"
+}
+
+hlink() {
+	echo -e "<a ${1}>${2}</a>\n" >> "$IBK_OUT"
+}
+
+content.end() {
     printf "</body>\n" >> "$IBK_OUT"
 }
 

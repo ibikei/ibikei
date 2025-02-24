@@ -1,0 +1,13 @@
+init
+meta
+	page.title "Ibikei"
+meta.end
+content
+	center
+		heading1 "ibikei SSG"
+		paragraph "an SSG made in bash."
+		heading1 "IBK-Lang"
+		paragraph "a markup language that has been made just for this project"
+		hlink "href=https://github.com/ibikei/ibikei" "go check it out"
+	center.end
+content.end
