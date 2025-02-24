@@ -11,7 +11,7 @@ content
 	container "class=desk"
 		container "class=window"
 			center
-				heading1 "ibikei SSG"
+				heading1 "ibikei SSG v${VERSION}"
 				paragraph "an SSG made in bash."
 				heading1 "IBK-Lang"
 				paragraph "a markup language that has been made just for this project"
