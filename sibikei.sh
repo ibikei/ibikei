@@ -45,19 +45,19 @@ sibikei() {
 }
 
 init() {
-    echo -e "<!DOCTYPE html>" > "$IBK_OUT"
+    /bin/echo -e "<!DOCTYPE html>" | tee "$IBK_OUT"
 }
 
 meta() {
-    printf "<head>\n" >> "$IBK_OUT"
+    /bin/printf "<head>\n" | tee -a "$IBK_OUT"
 }
 
 meta.link() {
-	printf "<link %s>\n" "$@" >> "$IBK_OUT"
+	/bin/printf "<link %s>\n" "$@" | tee -a "$IBK_OUT"
 }
 
 meta.m() {
-	printf "<meta %s>\n" "$@" >> "$IBK_OUT"
+	/bin/printf "<meta %s>\n" "$@" | tee -a "$IBK_OUT"
 }
 
 page.title() {
@@ -65,59 +65,59 @@ page.title() {
 }
 
 meta.title() {
-    printf "<title>%s</title>\n" "$*" >> "$IBK_OUT"
+    /bin/printf "<title>%s</title>\n" "$*" | tee -a "$IBK_OUT"
 }
 
 css() {
-	meta.link "rel=stylesheet href=\"${1}\""
+	/meta.link "rel=stylesheet href=\"${1}\""
 }
 
 html() {
-    printf "<html %s>\n" "$1" >> "$IBK_OUT"
+    /bin/printf "<html %s>\n" "$1" | tee -a "$IBK_OUT"
 }
 
 html.end() {
-	printf "</html>\n" >> "$IBK_OUT"
+	/bin/printf "</html>\n" | tee -a "$IBK_OUT"
 }
 
 meta.end() {
-    printf "</head>\n" >> "$IBK_OUT"
+    /bin/printf "</head>\n" | tee -a "$IBK_OUT"
 }
 
 content() {
-    printf "<body>\n" >> "$IBK_OUT"
+    /bin/printf "<body>\n" | tee -a "$IBK_OUT"
 }
 
 heading1() {
-    printf "<h1>%s</h1>\n" "$@" >> "$IBK_OUT"
+    /bin/printf "<h1>%s</h1>\n" "$@" | tee -a "$IBK_OUT"
 }
 
 heading2() {
-    printf "<h2>%s</h2>\n" "$@" >> "$IBK_OUT"
+    /bin/printf "<h2>%s</h2>\n" "$@" | tee -a "$IBK_OUT"
 }
 
 heading3() {
-    printf "<h3>%s</h3>\n" "$@" >> "$IBK_OUT"
+    /bin/printf "<h3>%s</h3>\n" "$@" | tee -a "$IBK_OUT"
 }
 
 heading4() {
-    printf "<h4>%s</h4>\n" "$@" >> "$IBK_OUT"
+    /bin/printf "<h4>%s</h4>\n" "$@" | tee -a "$IBK_OUT"
 }
 
 heading5() {
-    printf "<h5>%s</h5>\n" "$@" >> "$IBK_OUT"
+    /bin/printf "<h5>%s</h5>\n" "$@" | tee -a "$IBK_OUT"
 }
 
 heading6() {
-    printf "<h6>%s</h6>\n" "$@" >> "$IBK_OUT"
+    /bin/printf "<h6>%s</h6>\n" "$@" | tee -a "$IBK_OUT"
 }
 
 paragraph() {
-    printf "<p>%s</p>\n" "$@" >> "$IBK_OUT"
+    /bin/printf "<p>%s</p>\n" "$@" | tee -a "$IBK_OUT"
 }
 
 container() {
-    printf "<div %s>\n" "$@" >> "$IBK_OUT"
+    /bin/printf "<div %s>\n" "$@" | tee -a "$IBK_OUT"
 }
 
 con() {
@@ -129,15 +129,15 @@ con.end() {
 }
 
 container.end() {
-	printf "</div>\n" >> "$IBK_OUT"
+	/bin/printf "</div>\n" | tee -a "$IBK_OUT"
 }
 
 center() {
-	printf "<center>\n" >> "$IBK_OUT"
+	/bin/printf "<center>\n" | tee -a "$IBK_OUT"
 }
 
 center.end() {
-	printf "</center>\n" >> "$IBK_OUT"
+	/bin/printf "</center>\n" | tee -a "$IBK_OUT"
 }
 
 hlink() {
@@ -145,23 +145,23 @@ hlink() {
 }
 
 hyperlink() {
-	printf "<a %s>%s</a>\n" "$1" "$2" >> "$IBK_OUT"
+	/bin/printf "<a %s>%s</a>\n" "$1" "$2" | tee -a "$IBK_OUT"
 }
 
 content.end() {
-    printf "</body>\n" >> "$IBK_OUT"
+    /bin/printf "</body>\n" | tee -a "$IBK_OUT"
 }
 
 code() {
-    printf "<code>%s</code>\n" "$@" >> "$IBK_OUT"
+    /bin/printf "<code>%s</code>\n" "$@" | tee -a "$IBK_OUT"
 }
 
 textbox() {
-	printf "<input %s>\n" "$@"
+	/bin/printf "<input %s>\n" "$@"
 }
 
 t() {
-	printf "%s\n" "$@" >> "$IBK_OUT"
+	/bin/printf "%s\n" "$@" | tee -a "$IBK_OUT"
 }
 
 # Logging

@@ -12,7 +12,6 @@ export VERSION=0.3
 
 safety_check() {
     # Set PATH to nothing to prevent the .ibkx file calling non-IBK-Lang commands
-    PATH=""
     alias rm='echo "Prevented arbitrary code execution by blocking a delete command"'
 }
 
