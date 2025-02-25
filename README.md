@@ -3,6 +3,11 @@ a Bash SSG (sort of)
 # IBK-Lang
 A "markup language" that ibikei takes and converts into HTML with
 
+File extension: __.ibkx__~~, .ibkxs~~
+# sibikei
+A safe and isolated version of Ibikei that makes sure to limit anything that is not IBK-Lang code.
+
+Doesn't work properly at the moment...
 # How does it work?
 You make an .ibkx file and write IBK-Lang code in it. You then use the following command to build the .ibkx file into an .html:
 
