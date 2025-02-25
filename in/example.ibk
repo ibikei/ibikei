@@ -1,6 +1,0 @@
-init
-page_title "Testing ibikei"
-content
-    heading1 Hello
-    paragraph Haiii
-content_end

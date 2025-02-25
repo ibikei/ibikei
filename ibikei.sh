@@ -8,7 +8,7 @@
 
 export IBK_IN=$1
 export IBK_OUT=$2
-export VERSION=0.2
+export VERSION=0.3
 
 main() {
     source "$IBK_IN"
@@ -25,11 +25,11 @@ meta() {
 }
 
 meta.link() {
-	printf "<link %s>" "$@" >> "$IBK_OUT"
+	printf "<link %s>\n" "$@" >> "$IBK_OUT"
 }
 
 meta.m() {
-	printf "<meta %s>" "$@" >> "$IBK_OUT"
+	printf "<meta %s>\n" "$@" >> "$IBK_OUT"
 }
 
 page.title() {
@@ -37,7 +37,19 @@ page.title() {
 }
 
 meta.title() {
-    printf "<title>%s</title>" "$*" >> "$IBK_OUT"
+    printf "<title>%s</title>\n" "$*" >> "$IBK_OUT"
+}
+
+css() {
+	meta.link "rel=stylesheet href=\"${1}\""
+}
+
+html() {
+    printf "<html %s>\n" "$1" >> "$IBK_OUT"
+}
+
+html.end() {
+	printf "</html>\n" >> "$IBK_OUT"
 }
 
 meta.end() {
@@ -101,7 +113,7 @@ center.end() {
 }
 
 hlink() {
-    hyperlink $1 $2
+    hyperlink "$1" "$2"
 }
 
 hyperlink() {
@@ -117,7 +129,7 @@ code() {
 }
 
 textbox() {
-	printf "<input %s>" "$@"
+	printf "<input %s>\n" "$@"
 }
 
 t() {

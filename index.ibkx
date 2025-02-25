@@ -1,11 +1,13 @@
 init
+html "lang=\"en\""
 meta
 	meta.title "Ibikei $VERSION"
-	meta.link 'rel="stylesheet" href="https://kevadesu.github.io/style.css"'
 	meta.link 'rel="preconnect" href="https://fonts.googleapis.com"'
 	meta.link 'rel="preconnect" href="https://fonts.gstatic.com" crossorigin'
-	meta.link 'href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet"'
+	css "https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&display=swap"
+	css "https://kevadesu.github.io/style.css"
 	meta.m 'name="viewport" content="width=device-width, initial-scale=1.0"'
+	meta.m 'charset="UTF-8"'
 meta.end
 content
 	container "class=desk"
@@ -28,3 +30,4 @@ you then run the ibikei.sh script using the following syntax:"
 		container.end
 	container.end
 content.end
+html.end
