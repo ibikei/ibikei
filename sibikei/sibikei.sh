@@ -8,11 +8,13 @@
 
 export IBK_IN=$1
 export IBK_OUT=$2
-export VERSION=0.3
+export VERSION="0.3s"
+# shellcheck disable=SC2155
 export SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 safety_check() {
     # Set PATH to nothing to prevent the .ibkx file calling non-IBK-Lang commands
+    # shellcheck disable=SC2123
     PATH=""
     alias rm='echo "Prevented arbitrary code execution by blocking a delete command"'
     alias dd='echo "Prevented arbitrary code execution by blocking a write command"'
@@ -21,7 +23,7 @@ safety_check() {
 main() {
     limsg s 0 i "Safe version - Preventing arbitrary code execution"
     limsg s 3 i "Copying myself temporarily to /tmp"
-    cp -v $SCRIPT_DIR/ibikei.sh /tmp/ibikei.sh || limsg.quit s 3 e "Failed to copy!"
+    cp -v $SCRIPT_DIR/sibikeir.sh /tmp/sibikeir.sh || limsg.quit s 3 e "Failed to copy!"
     limsg s 3 i "Copying ibkx temporarily to /tmp"
     cp -v $IBK_IN /tmp/input.ibkx || limsg.quit s 3 e "Failed to copy!"
     limsg s 3 i "Entering directory"
@@ -31,7 +33,7 @@ main() {
         limsg s 4 i "Sourcing file using restricted Bash"
         sibikei
         limsg s 5 i "Returning to original directory"
-    popd
+    popd || limsg.quit s 3 e "Failed to return to original directory!"
     limsg s 5 i "We're done here."
     exit
 }
@@ -41,8 +43,10 @@ main() {
 # Defining keywords in ibk-lang
 
 sibikei() {
-	/bin/rbash ./ibikei.sh input.ibkx output.html || limsg.quit s 4 e "Failed to source file with rbash/write to file"
+	/bin/rbash ./sibikeir.sh input.ibkx output.html || limsg.quit s 4 e "Failed to source file with rbash/write to file"
 }
+
+## START DEPRECATED
 
 init() {
     /bin/echo -e "<!DOCTYPE html>" | tee "$IBK_OUT"
@@ -163,6 +167,8 @@ textbox() {
 t() {
 	/bin/printf "%s\n" "$@" | tee -a "$IBK_OUT"
 }
+
+## END DEPRECATED
 
 # Logging
 #!/bin/bash
