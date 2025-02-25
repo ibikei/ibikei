@@ -30,7 +30,7 @@ main() {
         limsg s 4 i "Loading safety checks"
         safety_check
         limsg s 4 i "Sourcing file using restricted Bash"
-        sibikei
+        sibikei || limsg.quit s 4 e "Sourcing failed!"
         limsg s 5 i "Returning to original directory"
     popd || limsg.quit s 3 e "Failed to return to original directory!"
     limsg s 5 i "We're done here."
