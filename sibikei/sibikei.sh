@@ -15,7 +15,6 @@ export SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null &&
 safety_check() {
     # Set PATH to nothing to prevent the .ibkx file calling non-IBK-Lang commands
     # shellcheck disable=SC2123
-    PATH=""
     alias rm='echo "Prevented arbitrary code execution by blocking a delete command"'
     alias dd='echo "Prevented arbitrary code execution by blocking a write command"'
 }
