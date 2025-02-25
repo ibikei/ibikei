@@ -31,8 +31,11 @@ main() {
         safety_check
         limsg s 4 i "Sourcing file using restricted Bash"
         sibikei || limsg.quit s 4 e "Sourcing failed!"
+        cp -v
         limsg s 5 i "Returning to original directory"
     popd || limsg.quit s 3 e "Failed to return to original directory!"
+    limsg s 5 i "Getting the edited file"
+    cp -v /tmp/output.html "$IBK_OUT" || limsg.quit s 5 e "The output HTML refuses to return to the intended directory."
     limsg s 5 i "We're done here."
     exit
 }
