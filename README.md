@@ -7,7 +7,11 @@ File extension: __.ibkx__~~, .ibkxs~~
 # sibikei
 A safe and isolated version of Ibikei that makes sure to limit anything that is not IBK-Lang code.
 
+Instead of redirection, it uses tee to write to output file.
+Instead of writing directly to file, it writes it to a separate file under /tmp/ then copies it back
+
 Doesn't work properly at the moment...
+
 # How does it work?
 You make an .ibkx file and write IBK-Lang code in it. You then use the following command to build the .ibkx file into an .html:
 
