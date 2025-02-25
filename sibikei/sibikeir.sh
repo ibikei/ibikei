@@ -6,7 +6,7 @@ export IBK_OUT=$2
 export VERSION="0.3sr"
 
 main() {
-    source "$IBK_OUT"
+    source "$IBK_IN"
 }
 
 init() {
