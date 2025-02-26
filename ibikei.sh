@@ -8,7 +8,7 @@
 
 export IBK_IN=$1
 export IBK_OUT=$2
-export VERSION=0.3
+export VERSION=0.3.1
 
 safety_check() {
     # Set PATH to nothing to prevent the .ibkx file calling non-IBK-Lang commands
@@ -16,7 +16,18 @@ safety_check() {
 }
 
 main() {
-   source "$IBK_IN"
+    case "$IBK_EXT" in
+        "")
+            echo "ibikei: asked for no extensions, skip."
+        ;;
+        *)            
+            source "$IBK_EXT" || exit 1
+            echo "ibikei: extensions loaded!"
+        ;;
+    esac
+    echo "ibikei: time to build!"
+    time source "$IBK_IN" || exit 1
+    echo "ibikei: done!"
 }
 
 # Defining keywords in ibk-lang

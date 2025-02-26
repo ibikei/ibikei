@@ -12,7 +12,6 @@ meta.end
 content
 	container "class=desk"
 		container "class=window"
-			center
 				heading1 "ibikei SSG v${VERSION}"
 				paragraph "an SSG made in bash."
 				heading1 "IBK-Lang"
@@ -25,8 +24,10 @@ you then run the ibikei.sh script using the following syntax:"
 				paragraph "in the case of the website that has been written here,"
 				code "./ibikei.sh index.ibkx index.html"
 				paragraph "it'll source the .ibkx file, and will go through every line progressively"
+				heading6 "Interested in Extensions?"
+				hyperlink "href='https://github.com/ibikei/ibikei/wiki/Extensions'" "check out how they work!"
+				paragraph "that was all we were able to describe about ibikei"
 				hyperlink "href='https://github.com/ibikei/ibikei'" "go check it out"
-			center.end
 		container.end
 	container.end
 content.end
