@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Ibikei 0.3.1</title>
+<title>Ibikei 0.4</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&display=swap">
-<link rel=stylesheet href="https://kevadesu.github.io/echostyle/style.css">
+<link rel=stylesheet href="https://kevadesu.github.io/echostyle/skechou.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 </head>
 <body>
-<div class=desk>
+<div class=desk style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/64/Recombination%26Mutation.jpg');">
 <div class=window>
-<h1>ibikei SSG v0.3.1</h1>
+<h1>ibikei SSG v0.4</h1>
 <p>an SSG made in bash.</p>
 <h1>IBK-Lang</h1>
 <p>a markup language that has been made just for this project</p>
@@ -20,7 +20,7 @@
 <p>you make an .ibkx file and write IBK-Lang in it.
 IBK-Lang is the language used in place of Markdown for the input files.
 you then run the ibikei.sh script using the following syntax:</p>
-<p>./ibikei.sh < input file >  < output file ></p>
+<code>./ibikei.sh &lt;input.ibkx&gt; &lt;output.html&gt;</code>
 <p>in the case of the website that has been written here,</p>
 <code>./ibikei.sh index.ibkx index.html</code>
 <p>it'll source the .ibkx file, and will go through every line progressively</p>

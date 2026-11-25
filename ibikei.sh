@@ -8,12 +8,7 @@
 
 export IBK_IN=$1
 export IBK_OUT=$2
-export VERSION=0.3.1
-
-safety_check() {
-    # Set PATH to nothing to prevent the .ibkx file calling non-IBK-Lang commands
-    alias rm='echo "Prevented arbitrary code execution by blocking a delete command"'
-}
+export VERSION=0.4
 
 main() {
     case "$IBK_EXT" in
@@ -58,6 +53,14 @@ meta.title() {
 
 css() {
 	meta.link "rel=stylesheet href=\"${1}\""
+}
+
+script() {
+	printf "<script %s>\n" "$1" >> "$IBK_OUT"
+}
+
+script.end() {
+	printf "</script>\n" >> "$IBK_OUT"
 }
 
 html() {
@@ -150,6 +153,74 @@ textbox() {
 
 t() {
 	printf "%s\n" "$@" >> "$IBK_OUT"
+}
+
+table() {
+	printf "<table %s>\n" "$@" >> "$IBK_OUT"
+}
+
+table.row() {
+	printf "<tr>\n" >> "$IBK_OUT"
+}
+
+table.row.end() {
+	printf "</tr>\n" >> "$IBK_OUT"
+}
+
+table.cell.header() {
+	printf "<th>%s</th>\n" "$@" >> "$IBK_OUT"
+}
+
+table.cell() {
+	printf "<td>%s</td>\n" "$@" >> "$IBK_OUT"
+}
+
+table.end() {
+	printf "</table>" >> "$IBK_OUT"
+}
+
+list.unordered() {
+	printf "<ul>" >> "$IBK_OUT"
+}
+
+list.unordered.end() {
+	printf "</ul>" >> "$IBK_OUT"
+}
+
+list.ordered() {
+	printf "<ol>" >> "$IBK_OUT"
+}
+
+list.ordered.end() {
+	printf "</ol>" >> "$IBK_OUT"
+}
+
+list.desc() {
+	printf "<dl>" >> "$IBK_OUT"
+}
+
+list.desc.end() {
+	printf "</dl>" >> "$IBK_OUT"
+}
+
+list.item() {
+    printf "<li>%s</li>\n" "$@" >> "$IBK_OUT"
+}
+
+list.desc.t() {
+    printf "<dt>%s</dt>\n" "$@" >> "$IBK_OUT"
+}
+
+list.desc.d() {
+    printf "<dd>%s</dd>\n" "$@" >> "$IBK_OUT"
+}
+
+style() {
+	printf "<style>" >> "$IBK_OUT"
+}
+
+style.end() {
+	printf "</style>" >> "$IBK_OUT"
 }
 
 # Runs the main function
